@@ -58,7 +58,7 @@ jobs:
           # Kubernetes Config
           kubeconfig: ${{secrets.k8s_config}}
           
-      - name: Deploy MongoDB
+      - name: Deploy Mongo_DB
         uses: Azure/k8s-deploy@v1.3
         with:
           manifests: |
