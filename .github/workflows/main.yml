@@ -53,15 +53,16 @@ jobs:
       - name: Kubernetes set context
         uses: Azure/k8s-set-context@v1
         with:
-          # Acceptable values: kubeconfig or service-account
+         
           method: kubeconfig
-          # Kubernetes Config
+          
           kubeconfig: ${{secrets.k8s_config}}
           
       - name: Deploy Mongo_DB
         uses: Azure/k8s-deploy@v1.3
         with:
-          manifests:
+          manifests: |
             k8s/mongodb/deployment.yaml
+            k8s/mongodb/service.yaml
            
           
